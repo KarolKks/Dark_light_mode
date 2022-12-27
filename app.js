@@ -11,14 +11,12 @@ class DarkMode {
   
         if (this.theme === "dark") this.button.checked = true;
       }
-      this.button.addEventListener("change", this.switchTheme);
+      this.button.addEventListener("change", (e) => {
+        let theme = e.target.checked ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      });
     }
-  
-    switchTheme = (e) => {
-      let theme = e.target.checked ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-    };
   }
   
   const darkMode = new DarkMode();
