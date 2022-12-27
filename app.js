@@ -11,7 +11,6 @@ class DarkMode {
   
         if (this.theme === "dark") this.button.checked = true;
       }
-  
       this.button.addEventListener("change", this.switchTheme);
     }
   
